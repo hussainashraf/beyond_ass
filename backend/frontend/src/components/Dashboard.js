@@ -12,7 +12,6 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   let maleCount = 0;
   let femaleCount = 0;
-
   useEffect(() => {
     axios
       .get('https://randomuser.me/api/?results=10')
@@ -40,6 +39,7 @@ const Dashboard = () => {
         setLoading(false);
         console.log('male',maleCount)
         console.log('female',femaleCount)
+        console.log("dashboardrenderd")
 
       })
       .catch(error => {
@@ -48,6 +48,7 @@ const Dashboard = () => {
       });
   }, []);
 
+  
   // Extract data for the pie chart
  const data = {
     labels: ['Male', 'Female'],
