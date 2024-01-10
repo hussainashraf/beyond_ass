@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:4001/api/login', {
+      const response = await axios.post('https://beyond-ass-i4cq.vercel.app/login', {
         username,
         password,
       });

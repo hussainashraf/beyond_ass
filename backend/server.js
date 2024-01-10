@@ -40,7 +40,7 @@ app.post('/api/register', async (req, res) => {
   });
   
   
-  app.post('/api/login', async (req, res) => {
+  app.post('https://beyond-ass-i4cq.vercel.app/login', async (req, res) => {
     const { username, password } = req.body;
   
     try {
