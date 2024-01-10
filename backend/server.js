@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static(path.join("__dirname","./frontend/build")));
 const bcrypt = require('bcrypt');
 app.use(cors({
-  origin: 'https://beyond-ass-i4cq.vercel.app/', // Replace with your frontend's actual origin
+  origin: 'https://gold-good-rabbit.cyclic.app/' // Replace with your frontend's actual origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
@@ -41,7 +41,7 @@ app.post(`${backendURL}/api/register`, async (req, res) => {
   });
   
   
-  app.post(`${backendURL}/api/login`, async (req, res) => {
+  app.post('https://gold-good-rabbit.cyclic.app/api/login', async (req, res) => {
     const { username, password } = req.body;
   
     try {
