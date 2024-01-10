@@ -8,7 +8,11 @@ const PORT = process.env.PORT || 4001;
 app.use(express.json());
 app.use(express.static(path.join("__dirname","./frontend/build")));
 const bcrypt = require('bcrypt');
-
+app.use(cors({
+  origin: 'https://gold-good-rabbit.cyclic.app/', // Replace with your frontend's actual origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
