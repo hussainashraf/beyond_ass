@@ -5,11 +5,12 @@ const app = express();
 const path = require('path')
 const User = require('./UserSchema')
 const PORT = process.env.PORT || 4001;
+const backendURL = 'https://gold-good-rabbit.cyclic.app/';
 app.use(express.json());
 app.use(express.static(path.join("__dirname","./frontend/build")));
 const bcrypt = require('bcrypt');
 app.use(cors({
-  origin: 'https://gold-good-rabbit.cyclic.app/', // Replace with your frontend's actual origin
+  origin: 'https://beyond-ass-i4cq.vercel.app/', // Replace with your frontend's actual origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
@@ -17,7 +18,7 @@ app.use(cors({
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
-app.post('/api/register', async (req, res) => {
+app.post(`${backendURL}/api/register`, async (req, res) => {
     const { username, password } = req.body;
   
     try {
@@ -40,7 +41,7 @@ app.post('/api/register', async (req, res) => {
   });
   
   
-  app.post('https://beyond-ass-i4cq.vercel.app/login', async (req, res) => {
+  app.post(`${backendURL}/api/login`, async (req, res) => {
     const { username, password } = req.body;
   
     try {
@@ -63,7 +64,7 @@ app.post('/api/register', async (req, res) => {
     }
   });
 
-  app.get('/api/users', async (req, res) => {
+  app.get(`${backendURL}/api/users`, async (req, res) => {
     try {
       // Fetch user data from MongoDB, excluding the password field
       const users = await User.find().select({ username: 1, _id: 0 }); // Excludes _id field as well

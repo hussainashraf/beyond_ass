@@ -39,7 +39,7 @@ const Dashboard = () => {
         setLoading(false);
         console.log('male',maleCount)
         console.log('female',femaleCount)
-        console.log("dashboardrenderd")
+        console.log()
 
       })
       .catch(error => {
