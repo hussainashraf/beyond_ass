@@ -1,5 +1,5 @@
 // Register.js
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Button, TextField, Container, Typography, CssBaseline } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate  // Import useHistory
 import axios from 'axios';  // Import useHistory
