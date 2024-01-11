@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "./frontend/build")));
 const bcrypt = require('bcrypt');
 app.use(cors({
-  origin: 'https://beyond-ass-i4cq.vercel.app/', // Replace with your frontend's actual origin
+  origin: 'https://beyond-ass-v45w.vercel.app/', // Replace with your frontend's actual origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
