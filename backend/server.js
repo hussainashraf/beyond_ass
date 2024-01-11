@@ -5,9 +5,17 @@ const app = express();
 const path = require('path')
 const User = require('./UserSchema')
 const PORT = process.env.PORT || 4001;
-const backendURL = 'https://your-cyclic-backend.cyclic.app';
+// Update the backendURL to your actual frontend URL
+const frontendURL = 'https://beyond-ass-i4cq.vercel.app'; 
+
+app.use(cors({
+  origin: frontendURL,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
+
 app.use(express.json());
-app.use(express.static(path.join("__dirname","./frontend/build")));
+app.use(express.static(path.join(__dirname, "./frontend/build")));
 const bcrypt = require('bcrypt');
 app.use(cors({
   origin: 'https://beyond-ass-i4cq.vercel.app/', // Replace with your frontend's actual origin
@@ -75,11 +83,13 @@ app.post('/api/register', async (req, res) => {
     }
   });
   
-  app.get("*",function(_,res){
-    res.sendFile(path.join(__dirname,"./frontend/build/index.html"),function(err){
-      res.status(500).send(err);
-    })
-  })
+  app.get("*", function(_, res) {
+    res.sendFile(path.join(__dirname, "./frontend/build/index.html"), function(err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    });
+  });
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

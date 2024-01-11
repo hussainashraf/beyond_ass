@@ -4,7 +4,7 @@ import { Button, TextField, Container, Typography, CssBaseline } from '@mui/mate
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../UserContext';
 import axios from 'axios';
-
+const API_URL = 'https://beyond-ass-v45w.vercel.app/api'; 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:4001/api/login', {
+      const response = await axios.post('${API_URL}/login', {
         username,
         password,
       });

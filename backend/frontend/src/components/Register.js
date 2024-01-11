@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, TextField, Container, Typography, CssBaseline } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate  // Import useHistory
 import axios from 'axios';  // Import useHistory
-
+const API_URL = 'https://beyond-ass-v45w.vercel.app/api'
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -11,7 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://localhost:4001/api/register', {
+      const response = await axios.post('${API_URL}/login', {
         username,
         password,
       });
