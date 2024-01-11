@@ -7,7 +7,7 @@ const User = require('./UserSchema');
 const PORT = process.env.PORT || 4001;
 
 // Update the frontendURL to your actual frontend URL
-const frontendURL = 'https://beyond-ass-v45w.vercel.app/';
+const frontendURL = 'https://real-plum-pike-gear.cyclic.app/';
 
 app.use(
   cors({

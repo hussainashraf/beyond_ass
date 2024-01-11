@@ -3,7 +3,7 @@ import  { useState } from 'react';
 import { Button, TextField, Container, Typography, CssBaseline } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate  // Import useHistory
 import axios from 'axios';  // Import useHistory
-const API_URL = 'https://beyond-ass-v45w.vercel.app/'
+const API_URL = 'https://real-plum-pike-gear.cyclic.app/'
 
 const Register = () => {
   const [username, setUsername] = useState('');
