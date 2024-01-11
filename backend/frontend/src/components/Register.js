@@ -11,7 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
   const handleRegister = async () => {
     try {
-      const response = await axios.post('${API_URL}/login', {
+      const response = await axios.post('${API_URL}/register', {
         username,
         password,
       });
